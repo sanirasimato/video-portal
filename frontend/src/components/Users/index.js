@@ -1,53 +1,37 @@
 import React, { Component } from 'react';
-// import User from '../User'
+import User from '../User';
+// import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+// import Video from '../video';
 
 class Users extends Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
-            users : []
+            users: []
         };
     }
 
-    componentWillMount(){
+    componentDidMount() {
         fetch('http://localhost:3001/api/user')
-        .then(results => {
-            return results.json();
-        }).then(data => {
-            // console.log(data);
-            // let users = data.data.map((user) =>{
-            //     return (
-            //         user
-            //         // <div>
-            //         //     <h1>{user}</h1>
-            //         // </div>
-            //     );
-            // });
-            this.setState({users:data.data});
-            // console.log(data.data);
-            // this.setState({users:data.data});
-            // this.setState({ users: users});
-            // console.log("state: " + this.state.users.results);
-            // let users = data.results.map((user) => {
-            //         return{
-                        
-            //         };
-            // })
-        });
+            .then(results => {
+                return results.json();
+            }).then(data => {
+                this.setState({ users: data.data });
+            });
     }
 
     render() {
-        // return
-        let users = this.state.users.map(user => {
-            return(<p>{user.firstName}</p>);
-        })
+        let users = this.state.users.map((user) => {
+            return (
+                <User key={user._id} name={user.firstName +' '+ user.lastName} id={user._id}/>
+            );
+        });
+
         return (
-            {users}
-            // <div>
-            //     {/* <p>{this.state.users}</p> */}
-            //     {/* <User></User> */}
-            // </div>
-        );
+            <div>
+                {users}
+            </div>
+        )
     }
 }
 
