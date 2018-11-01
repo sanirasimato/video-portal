@@ -1,0 +1,21 @@
+.user-collection{
+    display:flex;
+    flex-direction: column;
+    width: 60vw;
+}
+.pagination-btn-set{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.table-head{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 15px 0 -15px 0;
+    width: 100%;
+}

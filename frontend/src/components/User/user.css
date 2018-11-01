@@ -3,7 +3,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 70vw;
+    width: 60vw;
+    padding: 5px 20px;
+    margin: 5px;
+    box-shadow: 2px 1px 6px #aaa;
+    background-color: cornflowerblue;
 }
 .user-name-container{
     display: flex;
@@ -19,4 +23,5 @@
 .user-vid-count{
     display: flex;
     width: 20%;
+    justify-content: center;
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "babel-node app.js"
   },
-  "author": "Sudarshana Dayananda",
+  "author": "Sanira Nimantha",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.4",
