@@ -23,7 +23,7 @@ class Users extends Component {
     render() {
         let users = this.state.users.map((user) => {
             return (
-                <User key={user._id} name={user.firstName +' '+ user.lastName} id={user._id}/>
+                <User key={user._id} name={user.firstName +' '+ user.lastName} id={user._id} vidCount={0}/>
             );
         });
 
