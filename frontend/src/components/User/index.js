@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './user.css';
 
 class User extends Component {
-    constructor(){
+    constructor(props){
         super();
         this.state = {
             videos: [],
@@ -11,49 +11,24 @@ class User extends Component {
         }
     };
 
-    // getVideoCount = () => {
-    //     let videos = this.state.videos.map((video) => {
-    //         console.log(video);
-    //         console.log(this.props.user);
-    //         // if(this.props.user._id === video.userId){
-    //         //     this.props.user.__v++;
-    //         //     return true;
-    //         // }
-    //         return (
-    //             false
-    //             // <User key={video._id} name={video.videoName} id={video._id} />
-    //         );
-    //     });
-    // };
-
     componentWillMount() {
         fetch('http://localhost:3001/api/video')
             .then(results => {
                 return results.json();
             }).then(data => {
-                let videos = data.data.map((video) => {
+                let tempCount = 0;
+                data.data.map((video) => {
                     if (this.props.id === video.userId) {
-                        // console.log(this.props.id);
-                        console.log();
-                        // console.log(this.state.count+1);
-                        // this.setState({count: this.count++})
-                        // return(
-                        //     <p>{this.state.count+1}</p>
-                        // );
+                        console.log(this.props.id);
+                        tempCount += 1;
                     }
-                    // console.log(video);
-                    return(
-                        <div key={video._id} videoName={video.videoName} userId={video.userId}>
-                        </div>
-                    )
+                    return tempCount;
                 })
-                
-                this.setState({ videos: videos });
+                this.setState({ count: tempCount});
             });
     };
 
     render() {
-        
         return (
             <div className="user-view">
                 <div className="user-name-container">
@@ -64,7 +39,7 @@ class User extends Component {
                         {/* <p>{this.state.videos}</p> */}
                         {/* <p>{this.props.id}</p> */}
                         {/* <p>{this.state.count}</p> */}
-                        {/* <p>Loading...</p> */}
+                        <p>{this.state.count}</p>
                         {/* <p>{this.state.count}</p> */}
                     </div>
                 </div>
