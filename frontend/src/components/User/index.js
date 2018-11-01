@@ -37,8 +37,17 @@ class User extends Component {
         
         return (
             <div className="user-view">
-                <h4>{this.props.name}</h4>
-                <p>Loading...</p>
+                <div className="user-name-container">
+                    <div>
+                        <h4>{this.props.name}</h4>
+                    </div>
+                    <div>
+                        <p>Loading...</p>
+                    </div>
+                </div>
+                <div>
+
+                </div>
                 {/* <p>{this.props.user ? this.props.user : 'Loading...'}</p> */}
             </div>
         );
