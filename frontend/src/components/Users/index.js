@@ -79,9 +79,9 @@ class Users extends Component {
         return (
             <div className="user-collection">
                 <div className="pagination-btn-set">
-                    <button onClick={this.previous} disabled={this.state.disablePrev}>Prev</button>
-                    <button>{this.state.page}</button>
-                    <button onClick={this.next} disabled={this.state.disableNext}>Next</button>
+                    <button className="custom-btn" onClick={this.previous} disabled={this.state.disablePrev}>Prev</button>
+                    <button className="page-number" >{this.state.page}</button>
+                    <button className="custom-btn" onClick={this.next} disabled={this.state.disableNext}>Next</button>
                 </div>
                 <div className="table-head">
                     <p>Users</p>

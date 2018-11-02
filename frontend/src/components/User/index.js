@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import img from './../../assets/images/loading.svg'
 import './user.css';
 
 class User extends Component {
@@ -34,6 +35,8 @@ class User extends Component {
     }
 
     render() {
+        const Loader = <img alt="Loading..." className="loader-image" src={img} />;
+
         return (
             <div className="user-view">
                 <div className="user-name-container">
@@ -41,10 +44,8 @@ class User extends Component {
                         <h5>{this.props.name}</h5>
                     </div>
                     <div className="user-vid-count">
-                        <h5>{this.state.count ? this.state.count : "loading..."}</h5>
+                        <h5>{this.state.count!=null ? this.state.count : Loader}</h5>
                     </div>
-                </div>
-                <div>
                 </div>
             </div>
         );
