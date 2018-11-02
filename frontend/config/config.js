@@ -1,3 +1,3 @@
 module.exports = {
-    USER_LIMIT: 2
+    USER_LIMIT: 4
 };

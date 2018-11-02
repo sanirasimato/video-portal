@@ -3,7 +3,7 @@ import img from './../../assets/images/loading.svg'
 import './user.css';
 
 class User extends Component {
-    constructor(props){
+    constructor(){
         super();
         this.state = {
             count: null

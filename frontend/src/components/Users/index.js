@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import User from '../User';
-import { USER_LIMIT } from './../../config/config';
 import './users.css'
 
 class Users extends Component {
@@ -15,10 +14,11 @@ class Users extends Component {
         };
         this.next = this._goNext.bind(this);
         this.previous = this._goPrevious.bind(this);
+        this.USER_LIMIT = 25;
     }
 
     componentDidMount() {
-        this.getData(0, USER_LIMIT);
+        this.getData(0, this.USER_LIMIT);
     }
 
     getData(skip, limit){
@@ -49,10 +49,10 @@ class Users extends Component {
      * pagination fetch the previous slice of data from the api call
      */
     _goPrevious = () => {
-        this.getData(this.state.skip - USER_LIMIT, USER_LIMIT);
+        this.getData(this.state.skip - this.USER_LIMIT, this.USER_LIMIT);
         this.setState({
             page: this.state.page - 1,
-            skip: this.state.skip - USER_LIMIT,
+            skip: this.state.skip - this.USER_LIMIT,
             disableNext: false
         });
     };
@@ -61,10 +61,10 @@ class Users extends Component {
      * pagination fetch the next slice of data from the api call
      */
     _goNext = () => {
-        this.getData(this.state.skip + USER_LIMIT, USER_LIMIT);
+        this.getData(this.state.skip + this.USER_LIMIT, this.USER_LIMIT);
         this.setState({
             page: this.state.page + 1,
-            skip: this.state.skip + USER_LIMIT,
+            skip: this.state.skip + this.USER_LIMIT,
             disablePrev: false
         });
     };
