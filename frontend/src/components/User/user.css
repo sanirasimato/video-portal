@@ -8,6 +8,7 @@
     margin: 5px;
     box-shadow: 2px 1px 6px #aaa;
     background-color: cornflowerblue;
+    box-sizing: border-box;
 }
 .user-name-container{
     display: flex;
@@ -15,13 +16,17 @@
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
+    height: 35px;
+    box-sizing: border-box;
 }
 .user-name{
     display: flex;
     width:90%;
+    box-sizing: border-box;
 }
 .user-vid-count{
     display: flex;
     width: 20%;
     justify-content: center;
+    box-sizing: border-box;
 }
