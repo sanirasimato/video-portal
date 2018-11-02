@@ -11,8 +11,8 @@ class User extends Component {
         this.getVideoCount = this._getVideoCount.bind(this);
     };
 
-    componentWillMount() {
-        this.getVideoCount()
+    componentDidMount() {
+        this.getVideoCount();
     };
 
     /**
